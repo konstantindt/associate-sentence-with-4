@@ -1,0 +1,18 @@
+td:not(:empty) {
+  border: 2px solid black;
+  padding: 15px;
+  word-wrap: break-word;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+form.center {
+  text-align: center;
+}
+
+.add_bottom_margin {
+  margin-bottom: 5px
+}

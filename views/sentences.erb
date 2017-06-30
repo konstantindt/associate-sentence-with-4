@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='UTF-8' />
+    <title>ASW4 | Sentence</title>
+    <link href='sentences.css' rel='stylesheet' />
+  </head>
+  <body class='container'>
+    <% if Sentence.sentences_root != @center_sentence %>
+      <form action='sentence' method='post' class='center add_bottom_margin'>
+        <input type='hidden' name='view_sentence_associated' value='<%= Sentence.sentences_root %>' />
+        <input type='submit' value='Back to first sentence (the root)' />
+      </form>
+    <% end %>
+    <table>
+      <tr>
+        <td class='empty'></td>
+        <td>
+          <%= erb :content_cell, locals: { index: 3 } %>
+        </td>
+        <td class='empty'></td>
+      </tr>
+      <tr>
+        <td>
+          <%= erb :content_cell, locals: { index: 1 } %>
+        </td>
+        <td>
+          <%= @center_sentence %>
+        </td>
+        <td>
+          <%= erb :content_cell, locals: { index: 2 } %>
+        </td>
+      </tr>
+      <tr>
+        <td class='empty'></td>
+        <td>
+          <%= erb :content_cell, locals: { index: 4 } %>
+        </td>
+        <td class='empty'></td>
+      </tr>
+    </table>
+  </body>
+</html>

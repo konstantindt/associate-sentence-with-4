@@ -1,0 +1,16 @@
+<% if @associated.select_sentence(locals[:index]).nil? %>
+  <form action='sentence' method='post'>
+    <input type='hidden' name='center_sentence' value='<%= @center_sentence %>' />
+    <input type='hidden' name='index' value='<%= locals[:index] %>' />
+    <input type='text' name='new_sentence' placeholder='Enter new sentence...' />
+    <input type='submit' value='Create' />
+  </form>
+<% else %>
+  <form action='sentence' method='post'>
+    <% @selected = @associated.select_sentence(locals[:index]) %>
+    <input type='hidden' name='view_sentence_associated' value='<%= @selected %>'>
+      <%= @selected %>
+    </input>
+    <input type='submit' value='View' />
+  </form>
+<% end %>
